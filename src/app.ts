@@ -6,7 +6,6 @@ import express from 'express';
 import cors from 'cors';
 const morgan = require('morgan');
 import DB from './conf/db';
-
 //ROUTES IMPORT
 import authRouter from './routes/auth.routes';
 //INIT
