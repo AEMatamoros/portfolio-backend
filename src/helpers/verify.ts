@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { UserModel } from './../models/usermodel';
+import { UserModel } from '../models/userModel';
 import { ROLES } from '../conf/db';
 
 const checkDuplicateUsernameOrEmail = (req: Request, res: Response, next: NextFunction) => {

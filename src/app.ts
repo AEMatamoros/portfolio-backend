@@ -8,12 +8,13 @@ const morgan = require('morgan');
 import DB from './conf/db';
 //ROUTES IMPORT
 import authRouter from './routes/auth.routes';
+import usersRouter from './routes/users.routes';
 //INIT
 const app = express();
 DB.ConnectDB();
 //CONFS
 
-cors({});
+app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -21,6 +22,7 @@ app.use(express.json());
 const port = process.env.PORT || 3000;
 //ROUTES
 app.use(authRouter)
+app.use(usersRouter)
 
 app.get('/', (req, res) => {
     res.send('Portfolio - API');

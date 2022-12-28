@@ -1,10 +1,10 @@
 import { Request, Response, NextFunction } from "express";
-import { UserModel } from "../models/usermodel";
+import { UserModel } from "../models/userModel";
 import { getCurrentDate } from "../helpers/transform";
 import { ROLES } from "../conf/db";
 
-var jwt = require("jsonwebtoken");
-var bcrypt = require("bcryptjs");
+let jwt = require("jsonwebtoken");
+let bcrypt = require("bcryptjs");
 
 const registerUser = async (req: Request, res: Response) => {
 
@@ -43,7 +43,7 @@ const loginUser = async (req: Request, res: Response) => {
                 return res.status(404).send({ message: "User Not found." });
             }
 
-            var passwordIsValid = bcrypt.compareSync(
+            let passwordIsValid = bcrypt.compareSync(
                 req.body.password,
                 user.password
             );
@@ -52,7 +52,7 @@ const loginUser = async (req: Request, res: Response) => {
                 return res.status(401).send({ message: "Invalid Password!" });
             }
 
-            var token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
+            let token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
                 expiresIn: 86400, // 24 hours
             });
 
