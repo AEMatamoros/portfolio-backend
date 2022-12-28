@@ -20,4 +20,4 @@ class DB {
 const DatabaseConection = new DB();
 
 export default DatabaseConection;
-export let ROLES = [`user${process.env.ROLSTACH}`, "admin${process.env.ROLSTACH}", "moderator${process.env.ROLSTACH}"];
+export let ROLES = ["admin${process.env.ROLSTACH}", `user${process.env.ROLSTACH}`, "moderator${process.env.ROLSTACH}"];
