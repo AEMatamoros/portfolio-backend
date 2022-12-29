@@ -11,4 +11,4 @@ const proyectSchema = new Schema<IProyect>({
 
 });
 
-export const UserModel = model<IProyect>('Proyect', proyectSchema);
+export const ProyectModel = model<IProyect>('Proyect', proyectSchema);
